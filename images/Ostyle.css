@@ -1,0 +1,234 @@
+* {
+    margin: 0px;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif; 
+}
+
+body {
+    background-image: url('images/HistoryniCap3.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+}
+
+.navbar {
+    width: 20%; 
+    height: 310vh;
+    background-color: #cfc2aa; 
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 60px 20px;
+}
+
+.images:first-of-type {
+    position: absolute;
+    top: 35%;
+    left: 80px;
+    width: 400px;
+    height: auto;
+    display: block;
+}
+.images:first-of-type + .images{
+    position: absolute;
+    top: 90%;
+    left: 80px;
+    width: 400px;
+    height: auto;
+    display: block;
+}
+
+.images:first-of-type + .images + .images{
+    position: absolute;
+    top: 165%;
+    left: 80px;
+    width: 400px;
+    height: auto;
+    display: block;
+}
+
+.images:first-of-type + .images + .images + .images{
+    position: absolute;
+    top: 232%;
+    left: 80px;
+    width: 400px;
+    height: auto;
+    display: block;
+}
+
+.images:first-of-type + .images + .images + .images + .images{
+    position: absolute;
+    top: 240%;
+    left: 32%;
+    width: 55%;
+    height: auto;
+    display: block;
+}
+
+.images{
+    background: #ffffff;
+    padding: 18px 18px 75px 18px;
+    border-radius: 6px;
+    border: 5;
+    border-color: #333;
+    box-shadow: 
+        0 10px 25px rgba(0, 0, 0, 0.35);
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.logo-link {
+    font-weight: 900;
+    font-size: 80px;
+    font-family: Garamond, serif;
+    text-decoration: none;
+    color: #333; 
+    display: inline-block;
+    transition: transform 0.3s ease;
+    animation: liftUp 0.8s ease forwards;
+}
+
+.nav-links {
+    margin-top: -55px;
+    margin-left: 725%;
+    display: flex;
+}
+
+.nav-links .nav-item {
+    transform: scale(0.95);
+    text-decoration: none;
+    color: #ffefd1;
+    margin-right: 120px; 
+    font-size: 18px;
+    font-weight: 500;
+    display: inline-block;
+    transition: transform 0.3s ease;
+    animation: liftUp 0.8s ease forwards;
+}
+
+.hero-section {
+    width: 65%;
+    padding: 220px 0px 130px 190px;
+    overflow-y: auto;
+}
+
+.hero-content pre {
+    font-size: 44px;
+    line-height: 1;
+    margin-bottom: 40px;
+    font-weight: 900;
+    color: #ffefd1;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+    animation: liftUp 1.0s ease forwards;
+}
+
+.hero-content .reference{
+    color: #ffefd1;
+    font-weight: 10px;
+    animation: liftUp 1.0s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+}
+.sub-text {
+    font-size: 14px; 
+    font-variant: small-caps;
+    color: #ffefd1;
+    letter-spacing: 1px;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    width: 90%;
+    animation: liftUp 1.2s ease forwards;
+}
+
+.contacts {
+    background: #011822;
+    padding: 40px 100px;
+    width: 100%;           
+    position: fixed;
+    bottom: -213%;
+    z-index: 5;
+    position: absolute;
+}
+
+.footer-item {
+    color: #ffefd1;
+    text-decoration: none;
+    padding: 0px 130px;
+    margin-right: 120px;
+    font-size: 12px;
+}
+
+/* ANIMATIONS */
+
+@keyframes liftUp {
+    0% { opacity: 0; transform: translateY(50px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+.footer-item:hover {
+    text-decoration: underline;
+}
+
+.nav-links .nav-item.active {
+    color: #ffee8f;
+    font-weight: 700;
+}
+
+.nav-links .nav-item::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #ffee8f;
+    box-shadow: 0 0 8px #ffee8f;
+    transition: width 0.3s ease;
+    animation-play-state: inherit;
+}
+
+.logo-link:hover{
+    transform: scale(1.1);
+    color: #ffec81;
+    text-shadow: 0 0 15px #c2b040;
+    
+} .nav-item:hover {
+    transform: scale(1.1);
+    color: #ffee8f;
+    text-shadow: 0 0 15px #ffee8f;
+}
+
+.nav-links .nav-item:hover::after,
+.nav-links .nav-item.active::after {
+    width: 100%;
+}
+
+.images:nth-of-type(odd) {
+    transform: rotate(-2.5deg);
+}
+
+.images:nth-of-type(even) {
+    transform: rotate(2deg);
+}
+
+.images::before {
+    content: "";
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-2deg);
+    width: 95px;
+    height: 24px;
+    background: rgba(255, 255, 255, 0.65);
+    border: 1px solid rgba(255, 249, 172, 0.08);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.25);
+    z-index: 2;
+}
+
+.images:hover {
+    transform: translateY(-6px) rotate(0deg);
+    border-color: rgb(250, 250, 132);
+    box-shadow: 
+        0 18px 40px rgba(0, 0, 0, 0.45);
+}
