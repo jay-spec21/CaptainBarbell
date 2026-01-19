@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Captain Barbell Biography</title>
+    <link rel="stylesheet" href="ShowStyle.css">
+</head>
+        
+<body>
+
+    <header class="navbar">
+        <div class="logo-container">
+            <a href="Barbell.html" class="logo-link">CB</a>
+
+        </div>
+
+        <nav class="nav-links">
+            <a href="Barbell.html" class="nav-item">HOME</a>
+            <a href="Origin.html" class="nav-item">ORIGIN</a>
+            <a href="Biography.html" class="nav-item">BIOGRAPHY</a>
+            <a href="Show.html" class="nav-item">SHOWS</a>
+        </nav>
+    </header>
+
+    <main class="shows-container">
+
+        <section class="show-row">
+            <h2 class="row-title">MOVIES</h2>
+            <div class="carousel-wrapper">
+                <button class="nav-btn prev" onclick="moveStack(this, -1)">&#10094;</button>
+                
+                <div class="card-stack">
+                    <div class="card side-back-left"><img src="images/M4.jpg"></div>
+                    <div class="card side-front-left"><img src="images/M5.jpg"></div>
+                    <div class="card center-main"><img src="images/M1.jpg"></div>
+                    <div class="card side-front-right"><img src="images/M2.jpg"></div>
+                    <div class="card side-back-right"><img src="images/M3.jpg"></div>
+                </div>
+
+                <button class="nav-btn next" onclick="moveStack(this, 1)">&#10095;</button>
+            </div>
+        </section>
+
+        <section class="show-row">
+            <h2 class="row-title">TELEVISION</h2>
+            <div class="carousel-wrapper">
+                <button class="nav-btn prev" onclick="moveStack(this, -1)">&#10094;</button>
+                <div class="card-stack">
+                    <div class="card side-back-left"><img src="images/tv4.jpg" alt="TV 1"></div>
+                    <div class="card side-front-left"><p>Coming Soon!</p></div>
+                    <div class="card center-main"><img src="images/tv1.jpg" alt="TV 3"></div>
+                    <div class="card side-front-right"><img src="images/Tv2.jpg" alt="TV 4"></div>
+                    <div class="card side-back-right"><img src="images/tv3.webp" alt="TV 5"></div>
+                </div>
+                <button class="nav-btn next" onclick="moveStack(this, 1)">&#10095;</button>
+            </div>
+        </section>
+
+        <section class="show-row">
+            <h2 class="row-title">COMICS</h2>
+            <div class="carousel-wrapper">
+                <button class="nav-btn prev" onclick="moveStack(this, -1)">&#10094;</button>
+                <div class="card-stack">
+                    <div class="card side-back-left"><img src="images/C4.jpg" alt="Comic 1"></div>
+                    <div class="card side-front-left"><img src="images/C5.png" alt="Comic 2"></div>
+                    <div class="card center-main"><img src="images/C1.jpg" alt="Comic 3"></div>
+                    <div class="card side-front-right"><img src="images/C2.jpg" alt="Comic 4"></div>
+                    <div class="card side-back-right"><img src="images/C3.jpg" alt="Comic 5"></div>
+                </div>
+                <button class="nav-btn next" onclick="moveStack(this, 1)">&#10095;</button>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="contacts">
+        <div class="footer-container">
+            <div class="footer-contact">
+                <a href="https://www.facebook.com/jhnalbtbml21" class="footer-item">Facebook: Bomiel, John Albert F.</a>
+                <a href="mailto:johnbomiel2@gmail.com" class="footer-item">GMAIL: johnbomiel2@gmail.com</a>
+                <a href="tel:09292580390" class="footer-item">TEL: 0929 258 0390</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function moveStack(button, direction) {
+            const stack = button.parentElement.querySelector('.card-stack');
+            const cards = Array.from(stack.querySelectorAll('.card'));
+
+            if (direction === 1) {
+                stack.appendChild(cards[0]); 
+            } else {
+                stack.insertBefore(cards[cards.length - 1], cards[0]); 
+            }
+            const newCards = stack.querySelectorAll('.card');
+            const classes = ['side-back-left', 'side-front-left', 'center-main', 'side-front-right', 'side-back-right'];
+                        
+            newCards.forEach((card, index) => {
+                card.className = 'card ' + (classes[index] || 'hidden');
+            });
+        }
+        // https://www.youtube.com/watch?v=daSosaplGuU&t=652s 
+        // reference of my code
+    </script>
+</body>
+</html>
